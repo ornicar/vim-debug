@@ -59,7 +59,7 @@ class CmdRegistrar(Registrar):
     def add(self, func, args, kwds):
         lead = kwds.get('lead', '')
         if lead:
-            vim.command('map <Leader>%s :Dbg %s<cr>' % (lead, args[0]))
+            vim.command('map <Leader>d%s :Dbg %s<cr>' % (lead, args[0]))
         dct = {'function':func, 'options':kwds}
         for name in args:
             self.reg[name] = dct
